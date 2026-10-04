@@ -1,26 +1,244 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  :root,
+  html.dark {
+    --bg-void: #120306;
+    --bg-surface: #1B060B;
+    --bg-card: #22080E;
+    --bg-card-hover: #2F0C14;
+    --bg-overlay: rgba(18, 3, 6, 0.88);
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+    --gold-primary: #E5C378;
+    --gold-secondary: #D4AF37;
+    --gold-bright: #F7D78A;
+    --gold-dim: #A89A8A;
+    --gold-border: rgba(229, 195, 120, 0.18);
+    --gold-border-hover: rgba(229, 195, 120, 0.45);
+    --gold-glow: rgba(229, 195, 120, 0.25);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --maroon-pill: #3E0C15;
+    --maroon-border: #631823;
+    --maroon-glow: rgba(168, 38, 56, 0.4);
+
+    --text-primary: #F8F5EE;
+    --text-secondary: #D4C5B3;
+    --text-muted: #9E8F82;
+    --text-gold: #E5C378;
+
+    --body-bg: radial-gradient(ellipse at 50% 15%, #380C14 0%, #1A0509 45%, #0E0205 100%) fixed;
+    --body-bg-color: #0E0205;
+  }
+
+  html.light {
+    --bg-void: #FAF3EC;
+    --bg-surface: #FFF9F3;
+    --bg-card: #FFFFFF;
+    --bg-card-hover: #F8EDE3;
+    --bg-overlay: rgba(250, 243, 236, 0.96);
+
+    --gold-primary: #A16207;
+    --gold-secondary: #854D0E;
+    --gold-bright: #713F12;
+    --gold-dim: #4B332A;
+    --gold-border: rgba(161, 98, 7, 0.22);
+    --gold-border-hover: rgba(161, 98, 7, 0.55);
+    --gold-glow: rgba(161, 98, 7, 0.15);
+
+    --maroon-pill: #F6E2E5;
+    --maroon-border: #DFA0AB;
+    --maroon-glow: rgba(210, 130, 145, 0.25);
+
+    --text-primary: #120407;
+    --text-secondary: #260B12;
+    --text-muted: #54323B;
+    --text-gold: #A16207;
+
+    --body-bg: radial-gradient(ellipse at 50% 15%, #FFF0F2 0%, #FAF3EC 55%, #F4E5D6 100%) fixed;
+    --body-bg-color: #FAF3EC;
+  }
+
+  * {
+    box-sizing: border-box;
+    border-color: var(--gold-border);
+  }
+
+  body {
+    background: var(--body-bg);
+    background-color: var(--body-bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-laila), 'Laila', -apple-system, BlinkMacSystemFont, "Segoe UI", serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  ::selection {
+    background-color: var(--gold-primary);
+    color: #12090A;
+  }
+
+  ::-moz-selection {
+    background-color: var(--gold-primary);
+    color: #12090A;
+  }
+
+  /* Custom Sacred Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--bg-void);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--maroon-pill);
+    border-radius: 9999px;
+    border: 1px solid var(--gold-border);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--maroon-border);
+    border-color: var(--gold-primary);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Typography Utility: Laila Font Everywhere */
+.font-laila {
+  font-family: var(--font-laila), 'Laila', serif;
+}
+
+/* Glassmorphism Panels */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--gold-border);
+}
+
+.glass-nav {
+  background: var(--bg-overlay);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.glass-player {
+  background: var(--bg-overlay);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-top: 1px solid var(--gold-border);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFF6DD 0%, var(--gold-primary) 50%, #C49746 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ============================================================
+   VARIANT 1 TURNTABLE RECORD PLAYER ANIMATIONS & STYLES
+   ============================================================ */
+.deck {
+  position: relative;
+  aspect-ratio: 1;
+  max-width: 480px;
+  width: 100%;
+  margin: auto;
+}
+
+.record-vinyl {
+  position: absolute;
+  inset: 4% 12% 4% 4%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, transparent 0 31%, #000 31.5%),
+    repeating-radial-gradient(circle, #0b0507 0 2px, #1a0c10 3px 4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 0 6px #0a0406, 0 0 0 7px var(--gold-border);
+  animation: spinVinyl 6s linear infinite;
+  animation-play-state: paused;
+}
+
+.record-vinyl.is-playing {
+  animation-play-state: running;
+}
+
+.record-vinyl::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, transparent 0 10%, rgba(255, 255, 255, 0.12) 15%, transparent 22% 60%, rgba(255, 255, 255, 0.1) 65%, transparent 72%);
+  pointer-events: none;
+}
+
+.turntable-arm {
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  width: 8px;
+  height: 64%;
+  transform-origin: 50% 8px;
+  transform: rotate(-22deg);
+  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(90deg, #9c7a2f, var(--gold-primary), #9c7a2f);
+  border-radius: 6px;
+  z-index: 20;
+}
+
+.turntable-arm.is-playing {
+  transform: rotate(8deg);
+}
+
+.turntable-arm::before {
+  content: '';
+  position: absolute;
+  top: -14px;
+  left: -14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--gold-bright), var(--gold-secondary));
+  border: 3px solid #2a0b14;
+}
+
+.turntable-arm::after {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: -6px;
+  width: 20px;
+  height: 30px;
+  background: #2a0b14;
+  border: 2px solid var(--gold-secondary);
+  border-radius: 4px;
+}
+
+@keyframes spinVinyl {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Infinite Marquee Carousel Animation */
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-infinite {
+  display: flex;
+  width: max-content;
+  animation: marqueeLeft 32s linear infinite;
+}
+
+.animate-marquee-infinite:hover {
+  animation-play-state: paused;
 }
