@@ -121,6 +121,15 @@ export function AddToPlaylistModal({ song, isOpen, onClose }: AddToPlaylistModal
 
         {/* Selected Song Preview */}
         <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-[var(--bg-card)] border border-[var(--gold-border)]/50">
+          <div className="relative w-11 h-11 rounded-xl overflow-hidden bg-[var(--maroon-pill)] shrink-0 border border-[var(--gold-border)]">
+            <Image
+              src={song.thumbnail_url || '/logo.png'}
+              alt={song.title}
+              fill
+              unoptimized
+              className="object-cover"
+            />
+          </div>
           <div className="min-w-0 flex-1">
             <h4 className="text-xs font-bold text-[var(--text-primary)] truncate">
               {song.title}
