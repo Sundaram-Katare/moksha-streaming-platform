@@ -2,15 +2,20 @@ import { Database, LyricLanguage, UserRole, SongStatus, CommentStatus, PlatformT
 export type { UserRole, SongStatus, LyricLanguage, CommentStatus, PlatformType, SyncStatusType, Database };
 
 export type Song = Database['public']['Tables']['songs']['Row'] & {
+  category?: string;
   categories?: Category[];
   lyrics?: SongLyric[];
   platform_links?: SongPlatformLink[];
   likes_count?: number;
   user_has_liked?: boolean;
+  spotify_url?: string;
+  spotify_preview_url?: string;
 };
 
 export type Category = Database['public']['Tables']['categories']['Row'];
-export type SongLyric = Database['public']['Tables']['song_lyrics']['Row'];
+export type SongLyric = Database['public']['Tables']['song_lyrics']['Row'] & {
+  text?: string;
+};
 export type SongLike = Database['public']['Tables']['song_likes']['Row'];
 export type Playlist = Database['public']['Tables']['playlists']['Row'] & {
   song_count?: number;

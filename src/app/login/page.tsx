@@ -72,7 +72,7 @@ export default function AuthPage() {
           <div className="flex flex-col gap-3 pt-2">
             <Link
               href="/"
-              className="w-full py-3 rounded-full bg-[#E5C378] hover:bg-[#F7D78A] text-[#12090A] font-bold text-xs shadow-xl shadow-[#E5C378]/25 transition-all text-center"
+              className="w-full py-3 rounded-full bronze-pill hover:opacity-95 text-white font-bold text-xs shadow-xl shadow-[var(--gold-primary)]/20 transition-all text-center"
             >
               Enter Sacred Sanctuary
             </Link>
@@ -80,7 +80,7 @@ export default function AuthPage() {
             {isAdmin && (
               <Link
                 href="/admin"
-                className="w-full py-2.5 rounded-full bg-[#381419] border border-[#E5C378] text-[#E5C378] font-bold text-xs hover:bg-[#E5C378] hover:text-[#12090A] transition-all text-center"
+                className="w-full py-2.5 rounded-full bg-[var(--maroon-pill)] border border-[var(--gold-border)] text-[var(--gold-primary)] font-bold text-xs hover:bg-[var(--bg-card-hover)] transition-all text-center"
               >
                 Go to Admin Dashboard
               </Link>
@@ -121,7 +121,7 @@ export default function AuthPage() {
         </div>
 
         {/* Tab Switcher */}
-        <div className="grid grid-cols-2 gap-1 p-1 bg-[#1A0D0E] rounded-full border border-[#E5C378]/20">
+        <div className="grid grid-cols-2 gap-1 p-1 bg-[var(--maroon-pill)] rounded-full border border-[var(--gold-border)]">
           <button
             type="button"
             onClick={() => {
@@ -130,8 +130,8 @@ export default function AuthPage() {
             }}
             className={`py-2 text-xs font-semibold rounded-full transition-all cursor-pointer ${
               !isSignUp
-                ? 'bg-[#E5C378] text-[#12090A] shadow-md font-bold'
-                : 'text-[#C5BAAD] hover:text-[#F8F5EE]'
+                ? 'bronze-pill text-white shadow-md font-bold'
+                : 'text-[var(--text-muted)] hover:text-[var(--text-primary)]'
             }`}
           >
             Sign In
@@ -144,8 +144,8 @@ export default function AuthPage() {
             }}
             className={`py-2 text-xs font-semibold rounded-full transition-all cursor-pointer ${
               isSignUp
-                ? 'bg-[#E5C378] text-[#12090A] shadow-md font-bold'
-                : 'text-[#C5BAAD] hover:text-[#F8F5EE]'
+                ? 'bronze-pill text-white shadow-md font-bold'
+                : 'text-[var(--text-muted)] hover:text-[var(--text-primary)]'
             }`}
           >
             Sign Up
@@ -216,10 +216,10 @@ export default function AuthPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-3 rounded-full bg-[#E5C378] hover:bg-[#F7D78A] text-[#12090A] font-bold text-xs shadow-xl shadow-[#E5C378]/25 transition-all flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95 disabled:opacity-50 cursor-pointer"
+            className="w-full py-3 rounded-full bronze-pill hover:opacity-95 text-white font-bold text-xs shadow-xl shadow-[var(--gold-primary)]/20 transition-all flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95 disabled:opacity-50 cursor-pointer"
           >
             <span>{isLoading ? 'Processing...' : isSignUp ? 'Create Account' : 'Sign In'}</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 text-white" />
           </button>
         </form>
 

@@ -106,7 +106,7 @@ export default function SadhanaPage() {
           <div className="flex flex-wrap items-center justify-center gap-3">
             <button
               onClick={incrementJapa}
-              className="px-8 py-3 rounded-full bg-[#E5C378] hover:bg-[#F7D78A] text-[#12090A] font-bold text-sm shadow-xl shadow-[#E5C378]/25 hover:scale-105 active:scale-95 transition-all"
+              className="px-8 py-3 rounded-full bronze-pill hover:opacity-95 text-white font-bold text-sm shadow-xl shadow-[var(--gold-primary)]/20 hover:scale-105 active:scale-95 transition-all cursor-pointer"
             >
               + Tap Japa Bead
             </button>

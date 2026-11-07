@@ -58,12 +58,12 @@ export function BhaktiParivarSection() {
           {/* Solid Golden Pill CTA Button */}
           <div className="pt-3">
             <Link
-              href="https://youtube.com"
+              href="https://www.youtube.com/@mokshamusic20"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-[var(--gold-primary)] hover:opacity-90 text-[#12090A] font-bold text-sm tracking-wider uppercase shadow-xl shadow-[var(--gold-primary)]/30 hover:scale-105 active:scale-95 transition-all duration-300"
+              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bronze-pill text-white font-bold text-sm tracking-wider uppercase shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
             >
-              <svg className="w-4 h-4 fill-[#12090A]" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z" />
               </svg>
               <span className="font-laila font-bold">YOUTUBE पर देखें</span>

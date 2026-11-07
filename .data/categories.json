@@ -1,0 +1,104 @@
+[
+  {
+    "id": "cat-krishna",
+    "name": "Krishna Bhajans",
+    "hindi_name": "श्री कृष्ण भजन एवं कीर्तन",
+    "slug": "krishna-bhajans",
+    "description": "Vrindavan kirtans, flute ragas, and ecstatic Krishna melodies.",
+    "tagline": "PREM & ANAND",
+    "item_ids": [
+      "spotify-3Bu3KFn6Z401i6Qi86RMuq",
+      "spotify-3sxl1co2tXTl9urLVJbfoJ",
+      "spotify-5tRRnPcBlOiHi7fO0lZD8P",
+      "spotify-4HrAUohLAiRbUYbFi6nYS9",
+      "spotify-1hRttHYlXWdCSGtRMEvVhn",
+      "yt-BL-qD4H24R4",
+      "yt-s8in_gB1hD8",
+      "yt-WcOEDOoaxz8",
+      "yt-WPNrfr326pk"
+    ]
+  },
+  {
+    "id": "cat-ganesh",
+    "name": "Ganesh Invocations",
+    "hindi_name": "श्री गणेश वंदना एवं स्तुति",
+    "slug": "ganesh-invocations",
+    "description": "Auspicious morning mantras and prayer hymns to Lord Ganesha.",
+    "tagline": "MANGAL & SIDDHI",
+    "item_ids": [
+      "spotify-5sATw2cU3kCCEO8tTBZXUQ",
+      "yt-gaDGpLvWMJo",
+      "yt-a39zMTWjIsM"
+    ]
+  },
+  {
+    "id": "cat-aarti",
+    "name": "Aarti & Stuti",
+    "hindi_name": "पावन आरती एवं चालीसा संग्रह",
+    "slug": "aarti-stuti",
+    "description": "Authentic temple aartis and meditative divine stutis.",
+    "tagline": "BHAKTI & PRAKASH",
+    "item_ids": [
+      "spotify-31kEADJw24EeSmq6gIQ2g1",
+      "yt-a39zMTWjIsM",
+      "yt-U5yUFjoohG8",
+      "yt-Q5jQx-mOma8"
+    ]
+  },
+  {
+    "id": "cat-stotrams",
+    "name": "Vedic Stotrams",
+    "hindi_name": "प्राचीन वैदिक स्तोत्र",
+    "slug": "vedic-stotrams",
+    "description": "Vedic chants and ancient Sanskrit stotrams in 432Hz tuning.",
+    "tagline": "SHANTI & JNANA",
+    "item_ids": [
+      "spotify-5OTfElbVJuBVo8SluZ62k9",
+      "yt-fHj8bf-JneA"
+    ]
+  },
+  {
+    "id": "cat-dhyan",
+    "name": "Mahamantra & Dhyan",
+    "hindi_name": "महामंत्र जप एवं ध्यान",
+    "slug": "mahamantra-dhyan",
+    "description": "Continuous mantra chanting and meditative stillness for japa sadhana.",
+    "tagline": "DHYAN & SAMADHI",
+    "item_ids": [
+      "spotify-5F5d6a0KeYigcMVR0q20Ib",
+      "yt-QEV0xChp95Q"
+    ]
+  },
+  {
+    "id": "cat-devi",
+    "name": "Devi Stutis",
+    "hindi_name": "माँ दुर्गा एवं देवी स्तुति",
+    "slug": "devi-stutis",
+    "description": "Divine Mother stutis, kavachas, and sacred shakti chants.",
+    "tagline": "SHAKTI & TEJ",
+    "item_ids": [
+      "spotify-1cdvlBtso5I0j4a1T3pb7K",
+      "yt-Q5jQx-mOma8"
+    ]
+  },
+  {
+    "id": "cat-raga",
+    "name": "Raga Meditation",
+    "hindi_name": "शास्त्रीय राग एवं बाँसुरी संगीत",
+    "slug": "raga-meditation",
+    "description": "Indian classical ragas, meditative flute, and temple strings.",
+    "tagline": "NADA BRAHMA",
+    "item_ids": [
+      "yt-WPNrfr326pk"
+    ]
+  },
+  {
+    "id": "cat-1792388183412",
+    "name": "Bhajan",
+    "hindi_name": "Bhajan",
+    "slug": "bhajan",
+    "description": "",
+    "tagline": "BHAKTI & SHANTI",
+    "item_ids": []
+  }
+]

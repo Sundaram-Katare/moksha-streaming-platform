@@ -47,6 +47,7 @@ export async function POST(req: NextRequest) {
       deity_focus = '',
       description = '',
       duration_seconds = 0,
+      lyrics = [],
     } = body;
 
     if (!title || !hindi_title) {
@@ -67,6 +68,20 @@ export async function POST(req: NextRequest) {
     const cleanTitle = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
     const slug = `${cleanTitle}-${Date.now().toString(36)}`;
     const songId = crypto.randomUUID();
+    const now = new Date().toISOString();
+
+    const formattedLyrics = Array.isArray(lyrics)
+      ? lyrics
+          .filter((l: any) => l.lyrics && l.lyrics.trim())
+          .map((l: any, idx: number) => ({
+            id: `lyric-${songId}-${l.language || 'hi'}-${idx}`,
+            song_id: songId,
+            language: l.language || 'hi',
+            lyrics: l.lyrics.trim(),
+            created_at: now,
+            updated_at: now,
+          }))
+      : [];
 
     const newSong: Song = {
       id: songId,
@@ -91,9 +106,10 @@ export async function POST(req: NextRequest) {
       master_tape_number: null,
       acoustic_notes: null,
       status: 'published',
-      published_at: new Date().toISOString(),
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString(),
+      lyrics: formattedLyrics,
+      published_at: now,
+      created_at: now,
+      updated_at: now,
     };
 
     if (isSupabaseConfigured()) {

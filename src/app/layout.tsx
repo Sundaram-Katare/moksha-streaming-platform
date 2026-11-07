@@ -44,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${laila.variable} dark`} suppressHydrationWarning>
+    <html lang="en" className={`${laila.variable} light`} suppressHydrationWarning>
       <body className="font-laila text-[var(--text-primary)] antialiased min-h-screen flex flex-col">
         <ThemeProvider>
           <LanguageProvider>

@@ -241,13 +241,13 @@ export function SongDetailsClient({ song, relatedSongs = [] }: SongDetailsClient
                 {/* Primary Play Button */}
                 <button
                   onClick={togglePlayState}
-                  className="w-16 h-16 rounded-full bg-[var(--gold-primary)] hover:opacity-95 text-[#12090A] flex items-center justify-center shadow-xl shadow-[var(--gold-primary)]/30 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+                  className="w-16 h-16 rounded-full bronze-pill hover:opacity-95 text-white flex items-center justify-center shadow-xl shadow-[var(--gold-primary)]/20 hover:scale-105 active:scale-95 transition-all cursor-pointer"
                   title={isCurrentPlaying ? 'Pause' : 'Play'}
                 >
                   {isCurrentPlaying ? (
-                    <Pause className="w-7 h-7 fill-[#12090A]" />
+                    <Pause className="w-7 h-7 fill-white" />
                   ) : (
-                    <Play className="w-7 h-7 fill-[#12090A] ml-1" />
+                    <Play className="w-7 h-7 fill-white ml-1" />
                   )}
                 </button>
 

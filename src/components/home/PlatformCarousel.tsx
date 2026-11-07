@@ -81,18 +81,18 @@ export function PlatformCarousel() {
     <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-6 sm:py-8 overflow-hidden">
       {/* Top Subtle Label */}
       <div className="flex items-center justify-center gap-3 mb-5">
-        <span className="h-[1px] w-12 sm:w-24 bg-gradient-to-r from-transparent to-[#E5C378]/40" />
-        <span className="text-[11px] sm:text-xs font-bold tracking-[0.25em] text-[#E5C378] uppercase text-center">
+        <span className="h-[1px] w-12 sm:w-24 bg-gradient-to-r from-transparent to-[var(--gold-primary)]/40" />
+        <span className="text-[11px] sm:text-xs font-bold tracking-[0.25em] text-[var(--gold-primary)] uppercase text-center">
           LISTEN ON YOUR SACRED PLATFORMS
         </span>
-        <span className="h-[1px] w-12 sm:w-24 bg-gradient-to-l from-transparent to-[#E5C378]/40" />
+        <span className="h-[1px] w-12 sm:w-24 bg-gradient-to-l from-transparent to-[var(--gold-primary)]/40" />
       </div>
 
       {/* Infinite Moving Carousel Container */}
       <div className="relative w-full overflow-hidden mask-gradient-x">
         {/* Gradient edge fades for smooth infinity illusion */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#0A0505] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#0A0505] to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[var(--bg-void)] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[var(--bg-void)] to-transparent z-10 pointer-events-none" />
 
         <div className="animate-marquee-infinite flex items-center gap-6 sm:gap-10 py-3">
           {marqueeList.map((platform, idx) => (
@@ -101,7 +101,7 @@ export function PlatformCarousel() {
               href={platform.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 px-6 py-3.5 rounded-2xl bg-[#140A0C]/80 hover:bg-[#201013] border border-[#E5C378]/15 hover:border-[#E5C378]/50 transition-all duration-300 group shadow-lg hover:shadow-xl hover:shadow-[#E5C378]/15 shrink-0 hover:scale-105 active:scale-95"
+              className="flex items-center gap-4 px-6 py-3.5 rounded-2xl bg-[var(--bg-card)] hover:bg-[var(--bg-card-hover)] border border-[var(--gold-border)] hover:border-[var(--gold-primary)] transition-all duration-300 group shadow-md hover:shadow-xl hover:shadow-[var(--gold-primary)]/15 shrink-0 hover:scale-105 active:scale-95"
             >
               {/* Big Transparent Vector Icon */}
               <div className="shrink-0 transition-transform duration-300 group-hover:scale-110">
@@ -110,10 +110,10 @@ export function PlatformCarousel() {
 
               {/* Platform Text Details */}
               <div className="flex flex-col text-left">
-                <span className="font-cinzel text-sm sm:text-base font-bold text-[#F8F5EE] group-hover:text-[#E5C378] transition-colors whitespace-nowrap">
+                <span className="font-laila text-sm sm:text-base font-bold text-[var(--text-primary)] group-hover:text-[var(--gold-primary)] transition-colors whitespace-nowrap">
                   {platform.name}
                 </span>
-                <span className="text-[10px] sm:text-[11px] text-[#A89A8A] font-medium tracking-tight whitespace-nowrap">
+                <span className="text-[10px] sm:text-[11px] text-[var(--text-muted)] font-medium tracking-tight whitespace-nowrap">
                   {platform.tagline}
                 </span>
               </div>

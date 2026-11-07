@@ -1,0 +1,42 @@
+[
+  {
+    "id": "293aa55c-3c3e-417d-ba36-a775d605347c",
+    "user_id": "7157ab23-7aa4-425c-acc8-9e5458f6f0bd",
+    "name": "New Playlist",
+    "description": null,
+    "cover_url": null,
+    "is_public": false,
+    "created_at": "2026-10-19T11:47:59.617Z",
+    "updated_at": "2026-10-19T11:47:59.617Z",
+    "song_count": 1,
+    "songs": [
+      {
+        "id": "553db74b-a847-4ef8-a79f-2e403192a820",
+        "title": "Krishna Flute",
+        "hindi_title": "कृष्ण बांसुरी",
+        "slug": "krishna-flute-mutiu888",
+        "artist": "Moksha Devotional",
+        "raag": "",
+        "tala": "",
+        "deity_focus": "Krishna",
+        "description": "",
+        "thumbnail_url": "/uploads/thumbnails/1791100242653-pb6zwe.jpg",
+        "audio_url": "/uploads/audio/1791100242660-561rm0.mp3",
+        "youtube_video_id": null,
+        "youtube_url": null,
+        "duration_seconds": 113,
+        "plays_count": 0,
+        "audio_format": "Lossless 24-Bit / 96kHz",
+        "is_featured": false,
+        "is_daily_darshan": false,
+        "is_fresh_consecration": true,
+        "master_tape_number": null,
+        "acoustic_notes": null,
+        "status": "published",
+        "published_at": "2026-10-04T07:50:42.729Z",
+        "created_at": "2026-10-04T07:50:42.729Z",
+        "updated_at": "2026-10-04T07:50:42.729Z"
+      }
+    ]
+  }
+]

@@ -91,8 +91,8 @@ export function SongCarouselRail({ title, songs }: SongCarouselRailProps) {
 
                   {/* Floating Play Button Overlay */}
                   <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="w-12 h-12 rounded-full bg-[var(--gold-primary)] text-[#12090A] flex items-center justify-center shadow-xl shadow-[var(--gold-primary)]/40 hover:scale-110 active:scale-95 transition-transform">
-                      <Play className="w-5 h-5 fill-[#12090A] ml-0.5" />
+                    <div className="w-12 h-12 rounded-full bronze-pill text-white flex items-center justify-center shadow-xl shadow-[var(--gold-primary)]/30 hover:scale-110 active:scale-95 transition-transform">
+                      <Play className="w-5 h-5 fill-white ml-0.5" />
                     </div>
                   </div>
                 </div>

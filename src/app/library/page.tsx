@@ -190,9 +190,9 @@ export default function LibraryPage() {
 
           <Link
             href="/login"
-            className="flex items-center gap-2 px-8 py-3 rounded-full bg-[var(--gold-primary)] hover:opacity-90 text-[#12090A] font-bold text-xs shadow-xl shadow-[var(--gold-primary)]/20 hover:scale-105 active:scale-95 transition-all"
+            className="flex items-center gap-2 px-8 py-3 rounded-full bronze-pill hover:opacity-95 text-white font-bold text-xs shadow-xl shadow-[var(--gold-primary)]/20 hover:scale-105 active:scale-95 transition-all"
           >
-            <LogIn className="w-4 h-4" />
+            <LogIn className="w-4 h-4 text-white" />
             <span>{t('Sign In to Create Playlists', 'प्लेलिस्ट बनाने के लिए साइन इन करें')}</span>
           </Link>
         </div>
@@ -258,9 +258,9 @@ export default function LibraryPage() {
             {songs.length > 0 && (
               <button
                 onClick={handlePlayAll}
-                className="flex items-center gap-2 px-6 py-3 rounded-full bg-[var(--gold-primary)] hover:opacity-90 text-[#12090A] font-bold text-xs shadow-lg shadow-[var(--gold-primary)]/20 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+                className="flex items-center gap-2 px-6 py-3 rounded-full bronze-pill hover:opacity-95 text-white font-bold text-xs shadow-lg shadow-[var(--gold-primary)]/20 hover:scale-105 active:scale-95 transition-all cursor-pointer"
               >
-                {isThisListPlaying ? <Pause className="w-4 h-4 fill-current" /> : <Play className="w-4 h-4 fill-current" />}
+                {isThisListPlaying ? <Pause className="w-4 h-4 fill-white" /> : <Play className="w-4 h-4 fill-white" />}
                 <span>{isThisListPlaying ? 'Playing' : 'Play All'}</span>
               </button>
             )}
@@ -300,9 +300,9 @@ export default function LibraryPage() {
               </p>
               <button
                 onClick={() => setShowAddSongsModal(true)}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--gold-primary)] text-[#12090A] font-bold text-xs hover:opacity-90 transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bronze-pill text-white font-bold text-xs hover:opacity-95 transition-all cursor-pointer"
               >
-                <Plus className="w-4 h-4" />
+                <Plus className="w-4 h-4 text-white" />
                 <span>Add Songs to Playlist</span>
               </button>
             </div>
@@ -418,7 +418,7 @@ export default function LibraryPage() {
                         ) : (
                           <button
                             onClick={() => handleAddSongDirect(song)}
-                            className="px-3 py-1.5 rounded-full bg-[var(--gold-primary)] text-[#12090A] font-bold text-[11px] hover:opacity-90 transition-all cursor-pointer shrink-0"
+                            className="px-3 py-1.5 rounded-full bronze-pill text-white font-bold text-[11px] hover:opacity-95 transition-all cursor-pointer shrink-0"
                           >
                             + Add
                           </button>
@@ -462,9 +462,9 @@ export default function LibraryPage() {
 
         <button
           onClick={() => setShowCreateModal(true)}
-          className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--gold-primary)] hover:opacity-90 text-[#12090A] font-bold text-xs shadow-md shadow-[var(--gold-primary)]/20 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+          className="flex items-center gap-2 px-5 py-2.5 rounded-full bronze-pill hover:opacity-95 text-white font-bold text-xs shadow-md shadow-[var(--gold-primary)]/20 hover:scale-105 active:scale-95 transition-all cursor-pointer"
         >
-          <Plus className="w-4 h-4" />
+          <Plus className="w-4 h-4 text-white" />
           <span>{t('Create New Playlist', 'नई प्लेलिस्ट बनाएं')}</span>
         </button>
       </div>
@@ -492,9 +492,9 @@ export default function LibraryPage() {
           </div>
           <button
             onClick={() => setShowCreateModal(true)}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[var(--gold-primary)] text-[#12090A] font-bold text-xs hover:opacity-90 transition-all cursor-pointer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bronze-pill text-white font-bold text-xs hover:opacity-95 transition-all cursor-pointer"
           >
-            <Plus className="w-4 h-4" />
+            <Plus className="w-4 h-4 text-white" />
             <span>{t('Create Your First Playlist', 'पहली प्लेलिस्ट बनाएं')}</span>
           </button>
         </div>
@@ -586,7 +586,7 @@ export default function LibraryPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting || !newPlaylistName.trim()}
-                  className="px-6 py-2 rounded-full bg-[var(--gold-primary)] text-[#12090A] font-bold text-xs hover:opacity-90 transition-all disabled:opacity-40"
+                  className="px-6 py-2 rounded-full bronze-pill text-white font-bold text-xs hover:opacity-95 transition-all disabled:opacity-40"
                 >
                   {isSubmitting ? 'Creating...' : 'Create Playlist'}
                 </button>

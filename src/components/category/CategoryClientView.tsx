@@ -84,9 +84,9 @@ export function CategoryClientView({ category, songs }: CategoryClientViewProps)
           <div className="flex items-center gap-3 pt-3">
             <button
               onClick={handlePlayAll}
-              className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#E5C378] hover:bg-[#F7D78A] text-[#12090A] font-bold text-sm shadow-xl shadow-[#E5C378]/25 hover:scale-105 active:scale-95 transition-all"
+              className="flex items-center gap-2 px-6 py-3 rounded-full bronze-pill hover:opacity-95 text-white font-bold text-sm shadow-xl shadow-[var(--gold-primary)]/20 hover:scale-105 active:scale-95 transition-all"
             >
-              <Play className="w-4 h-4 fill-[#12090A] ml-0.5" />
+              <Play className="w-4 h-4 fill-white ml-0.5" />
               <span>Play All Consecrations</span>
             </button>
           </div>
@@ -141,7 +141,7 @@ export function CategoryClientView({ category, songs }: CategoryClientViewProps)
                   <span className="text-[11px] font-mono text-[#8E8275]">
                     {song.duration_seconds ? `${Math.floor(song.duration_seconds / 60)}m` : '15m'}
                   </span>
-                  <div className="w-8 h-8 rounded-full bg-[#1F1013] group-hover:bg-[#E5C378] text-[#E5C378] group-hover:text-[#12090A] flex items-center justify-center transition-all border border-[#E5C378]/30 group-hover:border-transparent">
+                  <div className="w-8 h-8 rounded-full bg-[#1F1013] group-hover:bg-[var(--gold-primary)] text-[var(--gold-primary)] group-hover:text-white flex items-center justify-center transition-all border border-[#E5C378]/30 group-hover:border-transparent">
                     {isSongPlaying ? (
                       <span className="w-2.5 h-2.5 bg-current" />
                     ) : (

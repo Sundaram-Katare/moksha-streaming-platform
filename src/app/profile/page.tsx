@@ -36,9 +36,9 @@ export default function ProfilePage() {
           </div>
           <Link
             href="/login"
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[var(--gold-primary)] text-[#12090A] font-bold text-xs shadow-md shadow-[var(--gold-primary)]/20 hover:scale-105 active:scale-95 transition-all"
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bronze-pill hover:opacity-95 text-white font-bold text-xs shadow-md shadow-[var(--gold-primary)]/20 hover:scale-105 active:scale-95 transition-all"
           >
-            <LogIn className="w-4 h-4" />
+            <LogIn className="w-4 h-4 text-white" />
             <span>Sign In</span>
           </Link>
         </div>

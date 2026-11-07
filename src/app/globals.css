@@ -2,6 +2,37 @@
 
 @layer base {
   :root,
+  html.light {
+    --bg-void: #F6F1EA;
+    --bg-surface: #FFFDF9;
+    --bg-card: #FAF5EE;
+    --bg-card-hover: #F2E9DC;
+    --bg-overlay: rgba(246, 241, 234, 0.95);
+
+    --gold-primary: #8C5837;
+    --gold-secondary: #A66B44;
+    --gold-bright: #C27D50;
+    --gold-dim: #9E8373;
+    --gold-border: rgba(140, 88, 55, 0.22);
+    --gold-border-hover: rgba(140, 88, 55, 0.55);
+    --gold-glow: rgba(140, 88, 55, 0.18);
+
+    --maroon-pill: #EFE4D6;
+    --maroon-border: #D5BEA8;
+    --maroon-glow: rgba(140, 88, 55, 0.22);
+
+    --bronze-gradient: linear-gradient(135deg, #B87C52 0%, #8E5433 50%, #6F3B20 100%);
+    --bronze-pill-bg: linear-gradient(135deg, #C58B5E 0%, #A66B44 50%, #7D492A 100%);
+
+    --text-primary: #2D1C13;
+    --text-secondary: #6C5043;
+    --text-muted: #967C70;
+    --text-gold: #8C5837;
+
+    --body-bg: linear-gradient(180deg, #F9F5EE 0%, #F5ECE0 50%, #EDE1D0 100%) fixed;
+    --body-bg-color: #F6F1EA;
+  }
+
   html.dark {
     --bg-void: #120306;
     --bg-surface: #1B060B;
@@ -21,6 +52,9 @@
     --maroon-border: #631823;
     --maroon-glow: rgba(168, 38, 56, 0.4);
 
+    --bronze-gradient: linear-gradient(135deg, #F7D78A 0%, #E5C378 50%, #B88E3A 100%);
+    --bronze-pill-bg: linear-gradient(135deg, #E5C378 0%, #B88E3A 100%);
+
     --text-primary: #F8F5EE;
     --text-secondary: #D4C5B3;
     --text-muted: #9E8F82;
@@ -28,34 +62,6 @@
 
     --body-bg: radial-gradient(ellipse at 50% 15%, #380C14 0%, #1A0509 45%, #0E0205 100%) fixed;
     --body-bg-color: #0E0205;
-  }
-
-  html.light {
-    --bg-void: #FAF3EC;
-    --bg-surface: #FFF9F3;
-    --bg-card: #FFFFFF;
-    --bg-card-hover: #F8EDE3;
-    --bg-overlay: rgba(250, 243, 236, 0.96);
-
-    --gold-primary: #A16207;
-    --gold-secondary: #854D0E;
-    --gold-bright: #713F12;
-    --gold-dim: #4B332A;
-    --gold-border: rgba(161, 98, 7, 0.22);
-    --gold-border-hover: rgba(161, 98, 7, 0.55);
-    --gold-glow: rgba(161, 98, 7, 0.15);
-
-    --maroon-pill: #F6E2E5;
-    --maroon-border: #DFA0AB;
-    --maroon-glow: rgba(210, 130, 145, 0.25);
-
-    --text-primary: #120407;
-    --text-secondary: #260B12;
-    --text-muted: #54323B;
-    --text-gold: #A16207;
-
-    --body-bg: radial-gradient(ellipse at 50% 15%, #FFF0F2 0%, #FAF3EC 55%, #F4E5D6 100%) fixed;
-    --body-bg-color: #FAF3EC;
   }
 
   * {
@@ -242,3 +248,11 @@
 .animate-marquee-infinite:hover {
   animation-play-state: paused;
 }
+
+.bronze-pill {
+  background: var(--bronze-pill-bg);
+  color: #FFFDF9;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 12px rgba(140, 88, 55, 0.22);
+}
+

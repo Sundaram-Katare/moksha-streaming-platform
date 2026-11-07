@@ -15,11 +15,13 @@ import {
   Check,
   FileText,
   Plus,
+  Share2,
 } from 'lucide-react';
 import { usePlayer } from '@/features/player/PlayerContext';
 import { useLanguage } from '@/features/language/LanguageContext';
 import { CommentsSection } from '@/features/comments/CommentsSection';
 import { AddToPlaylistModal } from '@/components/playlist/AddToPlaylistModal';
+import { AestheticSocialCardModal } from '@/features/share-card/AestheticSocialCardModal';
 import { LyricLanguage } from '@/types';
 
 export function FullPlayerModal() {
@@ -46,6 +48,7 @@ export function FullPlayerModal() {
   const [likesCount, setLikesCount] = useState(currentSong?.likes_count || 0);
   const [copied, setCopied] = useState(false);
   const [isAddToPlaylistOpen, setIsAddToPlaylistOpen] = useState(false);
+  const [isShareModalOpen, setIsShareModalOpen] = useState(false);
 
   if (!isFullPlayerOpen || !currentSong) return null;
 
@@ -192,6 +195,15 @@ export function FullPlayerModal() {
                     <Plus className="w-4 h-4" />
                     <span className="font-laila text-xs font-semibold">{t('Add to Playlist', 'प्लेलिस्ट में जोड़ें')}</span>
                   </button>
+
+                  <button
+                    onClick={() => setIsShareModalOpen(true)}
+                    className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--gold-border)] hover:border-[var(--gold-primary)] bg-[var(--bg-void)] text-[var(--gold-primary)] transition-all cursor-pointer shadow-sm hover:bg-[var(--maroon-pill)]"
+                    title="Create Aesthetic Social Card"
+                  >
+                    <Share2 className="w-4 h-4" />
+                    <span className="font-laila text-xs font-semibold">{t('Sacred Card', 'सुंदर कार्ड')}</span>
+                  </button>
                 </div>
 
                 {/* Scrubber Progress Bar */}
@@ -236,13 +248,13 @@ export function FullPlayerModal() {
 
                   <button
                     onClick={togglePlay}
-                    className="w-16 h-16 rounded-full bg-[var(--gold-primary)] hover:opacity-95 text-[#12090A] flex items-center justify-center shadow-xl shadow-[var(--gold-primary)]/30 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+                    className="w-16 h-16 rounded-full bronze-pill hover:opacity-95 text-white flex items-center justify-center shadow-xl shadow-[var(--gold-primary)]/20 hover:scale-105 active:scale-95 transition-all cursor-pointer"
                     title={isPlaying ? 'Pause' : 'Play'}
                   >
                     {isPlaying ? (
-                      <Pause className="w-7 h-7 fill-[#12090A]" />
+                      <Pause className="w-7 h-7 fill-white" />
                     ) : (
-                      <Play className="w-7 h-7 fill-[#12090A] ml-1" />
+                      <Play className="w-7 h-7 fill-white ml-1" />
                     )}
                   </button>
 
@@ -310,6 +322,22 @@ export function FullPlayerModal() {
         isOpen={isAddToPlaylistOpen}
         onClose={() => setIsAddToPlaylistOpen(false)}
       />
+
+      {/* Aesthetic Social Card Modal */}
+      {isShareModalOpen && (
+        <AestheticSocialCardModal
+          item={{
+            id: currentSong.id,
+            title: currentSong.title,
+            hindi_title: currentSong.hindi_title,
+            artist: currentSong.artist,
+            thumbnail_url: currentSong.thumbnail_url,
+            type: 'song',
+            category: (currentSong as any).category,
+          }}
+          onClose={() => setIsShareModalOpen(false)}
+        />
+      )}
     </>
   );
 }

@@ -88,9 +88,9 @@ export function CommentsSection({ songId }: CommentsSectionProps) {
             <button
               type="submit"
               disabled={!commentText.trim()}
-              className="font-laila px-5 py-2 rounded-full bg-[var(--gold-primary)] hover:opacity-90 disabled:opacity-40 text-[#12090A] font-bold text-xs flex items-center gap-1.5 shadow-md shadow-[var(--gold-primary)]/20 transition-all cursor-pointer"
+              className="font-laila px-5 py-2 rounded-full bronze-pill hover:opacity-95 disabled:opacity-40 text-white font-bold text-xs flex items-center gap-1.5 shadow-md shadow-[var(--gold-primary)]/20 transition-all cursor-pointer"
             >
-              <Send className="w-3.5 h-3.5" />
+              <Send className="w-3.5 h-3.5 text-white" />
               <span>{t('Post', 'पोस्ट करें')}</span>
             </button>
           </div>

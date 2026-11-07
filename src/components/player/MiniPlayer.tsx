@@ -16,9 +16,14 @@ import {
   X,
   Music,
   ChevronUp,
+  FileText,
+  Share2,
+  Copy,
+  Check,
 } from 'lucide-react';
 import { usePlayer } from '@/features/player/PlayerContext';
 import { useLanguage } from '@/features/language/LanguageContext';
+import { AestheticSocialCardModal } from '@/features/share-card/AestheticSocialCardModal';
 
 export function MiniPlayer() {
   const {
@@ -45,6 +50,10 @@ export function MiniPlayer() {
   } = usePlayer();
 
   const { language } = useLanguage();
+  const [isInlineLyricsOpen, setIsInlineLyricsOpen] = React.useState(false);
+  const [inlineLyricsLang, setInlineLyricsLang] = React.useState<'hi' | 'en' | 'hinglish'>('hi');
+  const [isShareModalOpen, setIsShareModalOpen] = React.useState(false);
+  const [copiedLyrics, setCopiedLyrics] = React.useState(false);
 
   if (!currentSong) return null;
 
@@ -150,16 +159,16 @@ export function MiniPlayer() {
             <SkipBack className="w-4 h-4 fill-current" />
           </button>
 
-          {/* Gold Play / Pause Button */}
+          {/* Bronze Pill Play / Pause Button */}
           <button
             onClick={togglePlay}
-            className="w-10 h-10 rounded-full bg-[var(--gold-primary)] hover:opacity-90 text-[#12090A] flex items-center justify-center shadow-lg shadow-[var(--gold-primary)]/30 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+            className="w-10 h-10 rounded-full bronze-pill text-white flex items-center justify-center shadow-lg shadow-[var(--gold-primary)]/20 hover:scale-105 active:scale-95 transition-all cursor-pointer"
             title={isPlaying ? 'Pause' : 'Play'}
           >
             {isPlaying ? (
-              <Pause className="w-4 h-4 fill-[#12090A]" />
+              <Pause className="w-4 h-4 fill-white" />
             ) : (
-              <Play className="w-4 h-4 fill-[#12090A] ml-0.5" />
+              <Play className="w-4 h-4 fill-white ml-0.5" />
             )}
           </button>
 
@@ -202,9 +211,31 @@ export function MiniPlayer() {
         </div>
       </div>
 
-      {/* Right: Volume, Expand & Close / Dismiss Player */}
+      {/* Right: Lyrics, Share Card, Volume, Expand & Close */}
       <div className="hidden md:flex items-center gap-2 w-1/3 justify-end">
-        <div className="flex items-center gap-1.5">
+        {/* Toggle Inline Lyrics */}
+        <button
+          onClick={() => setIsInlineLyricsOpen(!isInlineLyricsOpen)}
+          className={`p-2 rounded-full transition-all cursor-pointer ${
+            isInlineLyricsOpen
+              ? 'bronze-pill text-white'
+              : 'text-[var(--text-muted)] hover:text-[var(--gold-primary)] hover:bg-[var(--maroon-pill)]'
+          }`}
+          title="Song Lyrics / भजन के बोल"
+        >
+          <FileText className="w-4 h-4" />
+        </button>
+
+        {/* Social Share Card Generator */}
+        <button
+          onClick={() => setIsShareModalOpen(true)}
+          className="p-2 rounded-full text-[var(--text-muted)] hover:text-[var(--gold-primary)] hover:bg-[var(--maroon-pill)] transition-all cursor-pointer"
+          title="Create Aesthetic Social Card / सुंदर कार्ड बनाएं"
+        >
+          <Share2 className="w-4 h-4" />
+        </button>
+
+        <div className="flex items-center gap-1.5 ml-1">
           <button
             onClick={toggleMute}
             className="text-[var(--text-muted)] hover:text-[var(--gold-primary)] transition-colors p-1 cursor-pointer"
@@ -244,6 +275,88 @@ export function MiniPlayer() {
           <X className="w-4 h-4" />
         </button>
       </div>
+
+      {/* Floating Inline Lyrics Drawer */}
+      {isInlineLyricsOpen && (
+        <div className="absolute bottom-[calc(100%+10px)] left-4 right-4 md:left-auto md:right-8 md:w-[460px] max-h-[400px] rounded-2xl bg-[var(--bg-card)]/95 backdrop-blur-xl border border-[var(--gold-border)] shadow-2xl p-4 flex flex-col z-50 animate-in slide-in-from-bottom-3 duration-200">
+          <div className="flex items-center justify-between pb-3 border-b border-[var(--gold-border)]">
+            <div className="flex items-center gap-2">
+              <FileText className="w-4 h-4 text-[var(--gold-primary)]" />
+              <span className="text-xs font-serif font-bold text-[var(--text-primary)]">Lyrics / भजन के बोल</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              {(['hi', 'en', 'hinglish'] as const).map((lang) => (
+                <button
+                  key={lang}
+                  onClick={() => setInlineLyricsLang(lang)}
+                  className={`px-2.5 py-0.5 text-[10px] rounded-full font-medium transition-all ${
+                    inlineLyricsLang === lang
+                      ? 'bronze-pill text-white'
+                      : 'bg-[var(--maroon-pill)] text-[var(--text-muted)] hover:text-[var(--text-primary)]'
+                  }`}
+                >
+                  {lang === 'hi' ? 'हिंदी' : lang === 'en' ? 'English' : 'Hinglish'}
+                </button>
+              ))}
+              <button
+                onClick={() => {
+                  const lyricObj = currentSong.lyrics?.find((l) => l.language === inlineLyricsLang) || currentSong.lyrics?.[0];
+                  const activeLyrics = lyricObj?.lyrics || (lyricObj as any)?.text;
+                  if (activeLyrics) {
+                    navigator.clipboard.writeText(activeLyrics);
+                    setCopiedLyrics(true);
+                    setTimeout(() => setCopiedLyrics(false), 2000);
+                  }
+                }}
+                className="p-1 rounded-md text-[var(--text-muted)] hover:text-[var(--gold-primary)] transition-colors ml-1"
+                title="Copy Lyrics"
+              >
+                {copiedLyrics ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+              </button>
+              <button
+                onClick={() => setIsInlineLyricsOpen(false)}
+                className="p-1 rounded-md text-[var(--text-muted)] hover:text-[#F87171] transition-colors"
+                title="Close"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          </div>
+
+          <div className="flex-1 overflow-y-auto py-4 px-2 text-center text-xs sm:text-sm font-serif leading-relaxed text-[var(--text-primary)] whitespace-pre-line scrollbar-thin">
+            {(() => {
+              const foundObj = currentSong.lyrics?.find((l) => l.language === inlineLyricsLang);
+              const fallbackObj = currentSong.lyrics && currentSong.lyrics.length > 0 ? currentSong.lyrics[0] : null;
+              const text = foundObj?.lyrics || (foundObj as any)?.text || fallbackObj?.lyrics || (fallbackObj as any)?.text;
+              if (!text) {
+                return (
+                  <div className="py-8 text-center text-xs text-[var(--text-muted)]">
+                    <p className="font-hindi text-sm">इस भजन के बोल अभी उपलब्ध नहीं हैं।</p>
+                    <p className="mt-1 opacity-70">Lyrics for this song have not been consecrated yet by the admin.</p>
+                  </div>
+                );
+              }
+              return text;
+            })()}
+          </div>
+        </div>
+      )}
+
+      {/* Aesthetic Social Card Modal */}
+      {isShareModalOpen && (
+        <AestheticSocialCardModal
+          item={{
+            id: currentSong.id,
+            title: currentSong.title,
+            hindi_title: currentSong.hindi_title,
+            artist: currentSong.artist,
+            thumbnail_url: currentSong.thumbnail_url,
+            type: 'song',
+            category: (currentSong as any).category,
+          }}
+          onClose={() => setIsShareModalOpen(false)}
+        />
+      )}
     </div>
   );
 }

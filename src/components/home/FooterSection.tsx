@@ -6,96 +6,96 @@ import Link from 'next/link';
 
 export function FooterSection() {
   return (
-    <footer className="w-full bg-[#0A0505] border-t border-[#E5C378]/15 mt-12 pt-12 pb-16 px-4 sm:px-6 lg:px-10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 pb-10 border-b border-[#E5C378]/10">
+    <footer className="w-full bg-[var(--bg-card)] border-t border-[var(--gold-border)] mt-10 pt-10 pb-14 px-4 sm:px-6 lg:px-10 transition-colors">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 pb-8 border-b border-[var(--gold-border)]/40">
         {/* Left Column: Brand (6 cols) */}
-        <div className="md:col-span-6 space-y-4">
+        <div className="md:col-span-6 space-y-3.5">
           <div className="flex items-center gap-3">
-            <div className="relative w-9 h-9 rounded-full overflow-hidden border border-[#E5C378]">
+            <div className="relative w-9 h-9 rounded-full overflow-hidden border border-[var(--gold-primary)]">
               <Image src="/logo.png" alt="Logo" fill className="object-cover" />
             </div>
-            <span className="font-cinzel text-lg font-bold text-[#E5C378]">
+            <span className="font-laila font-bold text-lg text-[var(--gold-primary)]">
               Moksha Music
             </span>
           </div>
 
-          <p className="text-xs text-[#A89A8A] leading-relaxed max-w-md">
-            A sacred sonic sanctuary merging primordial Vedic resonance, classical Indian ragas, and meditative soundscapes in audiophile-grade high-fidelity master acoustics.
+          <p className="text-xs text-[var(--text-secondary)] leading-relaxed max-w-md">
+            A sacred sonic sanctuary merging primordial Vedic resonance, classical Indian ragas, and meditative soundscapes in audiophile-grade high-fidelity acoustics.
           </p>
 
-          <div className="pt-2">
-            <span className="text-[10px] uppercase tracking-wider text-[#A89A8A] font-bold block mb-2">
+          <div className="pt-1">
+            <span className="text-[10px] uppercase tracking-wider text-[var(--text-muted)] font-bold block mb-1.5">
               STREAM ON ECOSYSTEMS
             </span>
-            <div className="flex flex-wrap items-center gap-2 text-[11px] text-[#C5BAAD]">
-              <span className="px-2.5 py-1 rounded bg-[#170D0E] border border-[#E5C378]/15">Apple Music Spatial</span>
-              <span className="px-2.5 py-1 rounded bg-[#170D0E] border border-[#E5C378]/15">Spotify HiFi</span>
-              <span className="px-2.5 py-1 rounded bg-[#170D0E] border border-[#E5C378]/15">YouTube Master</span>
+            <div className="flex flex-wrap items-center gap-2 text-[11px] text-[var(--text-secondary)]">
+              <span className="px-2.5 py-1 rounded-full bg-[var(--maroon-pill)] border border-[var(--gold-border)]">Spotify HiFi</span>
+              <span className="px-2.5 py-1 rounded-full bg-[var(--maroon-pill)] border border-[var(--gold-border)]">YouTube Master</span>
+              <span className="px-2.5 py-1 rounded-full bg-[var(--maroon-pill)] border border-[var(--gold-border)]">Apple Music Spatial</span>
             </div>
           </div>
         </div>
 
         {/* Middle Column: Sanctuary Paths (3 cols) */}
-        <div className="md:col-span-3 space-y-3">
-          <h4 className="text-xs font-bold uppercase tracking-widest text-[#E5C378]">
+        <div className="md:col-span-3 space-y-2.5">
+          <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--gold-primary)]">
             SANCTUARY PATHS
           </h4>
-          <ul className="space-y-2 text-xs text-[#A89A8A]">
+          <ul className="space-y-1.5 text-xs text-[var(--text-secondary)]">
             <li>
-              <Link href="/category/krishna" className="hover:text-[#F8F5EE] transition-colors">
-                Morning Raga Bhairav
+              <Link href="/music" className="hover:text-[var(--gold-primary)] transition-colors">
+                Spotify Music Catalog
               </Link>
             </li>
             <li>
-              <Link href="/category/shiva" className="hover:text-[#F8F5EE] transition-colors">
-                Pradosham Shiva Stotrams
+              <Link href="/videos" className="hover:text-[var(--gold-primary)] transition-colors">
+                Devotional Videos
               </Link>
             </li>
             <li>
-              <Link href="/category/meditation" className="hover:text-[#F8F5EE] transition-colors">
-                Vedic Chants in 432Hz
+              <Link href="/library" className="hover:text-[var(--gold-primary)] transition-colors">
+                My Sacred Playlists
               </Link>
             </li>
             <li>
-              <Link href="/category/mantra" className="hover:text-[#F8F5EE] transition-colors">
-                Kundalini Flute &amp; Drone
+              <Link href="/about" className="hover:text-[var(--gold-primary)] transition-colors">
+                Our Story &amp; Philosophy
               </Link>
             </li>
           </ul>
         </div>
 
-        {/* Right Column: Audiophile & Spirit (3 cols) */}
-        <div className="md:col-span-3 space-y-3">
-          <h4 className="text-xs font-bold uppercase tracking-widest text-[#E5C378]">
-            AUDIOPHILE &amp; SPIRIT
+        {/* Right Column: Devotional Acoustic Science (3 cols) */}
+        <div className="md:col-span-3 space-y-2.5">
+          <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--gold-primary)]">
+            ACOUSTIC SCIENCE
           </h4>
-          <ul className="space-y-2 text-xs text-[#A89A8A]">
+          <ul className="space-y-1.5 text-xs text-[var(--text-secondary)]">
             <li>
-              <Link href="/explore" className="hover:text-[#F8F5EE] transition-colors">
-                Devotional Master Tape Archive
-              </Link>
+              <span className="hover:text-[var(--gold-primary)] transition-colors">
+                432Hz Natural Healing Frequency
+              </span>
             </li>
             <li>
-              <Link href="/sadhana" className="hover:text-[#F8F5EE] transition-colors">
-                Acoustic Science of Sanskrit
-              </Link>
+              <span className="hover:text-[var(--gold-primary)] transition-colors">
+                Vedic Chants in Classical Metres
+              </span>
             </li>
             <li>
-              <Link href="/sadhana" className="hover:text-[#F8F5EE] transition-colors">
-                Sadhana Timer Companion
-              </Link>
+              <span className="hover:text-[var(--gold-primary)] transition-colors">
+                Lossless Audiophile Mastering
+              </span>
             </li>
           </ul>
         </div>
       </div>
 
       {/* Copyright & Legal */}
-      <div className="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#8E8275]">
-        <p>© 2025 Moksha Music Inc. Eternal Resonance. All Sacred Rights Reserved.</p>
+      <div className="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[var(--text-muted)]">
+        <p>© 2026 Moksha Music Inc. Eternal Devotional Resonance. All Rights Reserved.</p>
         <div className="flex items-center gap-4">
-          <Link href="#" className="hover:text-[#C5BAAD]">Divine Privacy</Link>
-          <Link href="#" className="hover:text-[#C5BAAD]">Terms of Sanctuary</Link>
-          <Link href="#" className="hover:text-[#C5BAAD]">Licensing Master Ragas</Link>
+          <Link href="/about" className="hover:text-[var(--gold-primary)]">About Us</Link>
+          <Link href="/music" className="hover:text-[var(--gold-primary)]">Music</Link>
+          <Link href="/videos" className="hover:text-[var(--gold-primary)]">Videos</Link>
         </div>
       </div>
     </footer>

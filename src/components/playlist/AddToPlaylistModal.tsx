@@ -155,9 +155,9 @@ export function AddToPlaylistModal({ song, isOpen, onClose }: AddToPlaylistModal
             <Link
               href="/login"
               onClick={onClose}
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[var(--gold-primary)] hover:opacity-90 text-[#12090A] font-bold text-xs shadow-md shadow-[var(--gold-primary)]/20 transition-all hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bronze-pill hover:opacity-95 text-white font-bold text-xs shadow-md shadow-[var(--gold-primary)]/20 transition-all hover:scale-105 active:scale-95"
             >
-              <LogIn className="w-4 h-4" />
+              <LogIn className="w-4 h-4 text-white" />
               <span>Sign In to Continue</span>
             </Link>
           </div>
@@ -175,9 +175,9 @@ export function AddToPlaylistModal({ song, isOpen, onClose }: AddToPlaylistModal
               <button
                 type="submit"
                 disabled={isCreating || !newPlaylistName.trim()}
-                className="px-3.5 py-2 rounded-xl bg-[var(--gold-primary)] text-[#12090A] font-bold text-xs hover:opacity-90 transition-all disabled:opacity-40 flex items-center gap-1 cursor-pointer shrink-0"
+                className="px-3.5 py-2 rounded-xl bronze-pill text-white font-bold text-xs hover:opacity-95 transition-all disabled:opacity-40 flex items-center gap-1 cursor-pointer shrink-0"
               >
-                <Plus className="w-3.5 h-3.5" />
+                <Plus className="w-3.5 h-3.5 text-white" />
                 <span>Create</span>
               </button>
             </form>
@@ -213,11 +213,11 @@ export function AddToPlaylistModal({ song, isOpen, onClose }: AddToPlaylistModal
                       <div
                         className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 ${
                           isAdded
-                            ? 'bg-[var(--gold-primary)] text-[#12090A]'
+                            ? 'bronze-pill text-white'
                             : 'border border-[var(--gold-border)] text-[var(--text-muted)]'
                         }`}
                       >
-                        {isAdded ? <Check className="w-3.5 h-3.5 stroke-[3]" /> : <Plus className="w-3.5 h-3.5" />}
+                        {isAdded ? <Check className="w-3.5 h-3.5 stroke-[3] text-white" /> : <Plus className="w-3.5 h-3.5" />}
                       </div>
                     </button>
                   );

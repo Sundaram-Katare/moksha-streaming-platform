@@ -166,16 +166,16 @@ export function ExploreHeroCarousel({ heroSongs }: ExploreHeroCarouselProps) {
                   {/* Play / Pause CTA */}
                   <button
                     onClick={() => play(currentHeroSong, heroSongs)}
-                    className="flex items-center gap-2.5 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bg-[var(--gold-primary)] hover:opacity-90 text-[#12090A] font-bold text-xs sm:text-sm tracking-wide shadow-xl shadow-[var(--gold-primary)]/25 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+                    className="flex items-center gap-2.5 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bronze-pill hover:opacity-95 text-white font-bold text-xs sm:text-sm tracking-wide shadow-xl shadow-[var(--gold-primary)]/20 hover:scale-105 active:scale-95 transition-all cursor-pointer"
                   >
                     {isThisPlaying ? (
                       <>
-                        <Pause className="w-4 h-4 sm:w-5 sm:h-5 fill-[#12090A]" />
+                        <Pause className="w-4 h-4 sm:w-5 sm:h-5 fill-white" />
                         <span>{t('Pause', 'रोकें')}</span>
                       </>
                     ) : (
                       <>
-                        <Play className="w-4 h-4 sm:w-5 sm:h-5 fill-[#12090A] ml-0.5" />
+                        <Play className="w-4 h-4 sm:w-5 sm:h-5 fill-white ml-0.5" />
                         <span>{t('Listen Now', 'अभी सुनें')}</span>
                       </>
                     )}
